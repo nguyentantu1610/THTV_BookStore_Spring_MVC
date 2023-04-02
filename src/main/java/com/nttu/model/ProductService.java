@@ -83,7 +83,7 @@ public class ProductService extends Operator {
 			dbObject.put("productLevel", product.getProductLevel());
 			dbObject.put("productStock", product.getProductStock());
 			List<String> images = new ArrayList<String>();
-			images.add("../images/default-image.png");
+			images.add("/webcomic/images/default-image.png");
 			dbObject.put("productImage", images);
 
 			// Save a new product to the mongo collection.
@@ -147,7 +147,6 @@ public class ProductService extends Operator {
 				DBObject edited = new BasicDBObject();
 				edited.put("productID", product.getProductID());
 				edited.put("productName", product.getProductName());
-
 				edited.put("categoryID", product.getCategoryID());
 				edited.put("genreID", product.getGenreID());
 				edited.put("seriesID", product.getSeriesID());

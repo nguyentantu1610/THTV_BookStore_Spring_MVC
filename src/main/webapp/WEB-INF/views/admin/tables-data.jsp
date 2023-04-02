@@ -194,7 +194,7 @@
 													</a></td>
 												</c:if>
 												<c:if test="${content == 'product'}">
-													<td><img src="../${item.productImage[0]}" alt="image"
+													<td><img src="${item.productImage[0]}" alt="image"
 														style="width: 7vw;"></td>
 													<td>${item.productName}</td>
 													<td>${item.productStock}</td>

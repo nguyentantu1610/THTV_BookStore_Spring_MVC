@@ -88,8 +88,16 @@
 									type="hidden" name="newImages" id="newImages">
 								<div class="row">
 									<div class="col-lg-3">
-										<img src="../${product.productImage[0]}" alt="image"
-											style="width: 12vw; height: 30vh;">
+										<c:if
+											test="${product.productImage[0] == 'images/default-image.png'}">
+											<img src="../${product.productImage[0]}" alt="image"
+												style="width: 12vw; height: 30vh;">
+										</c:if>
+										<c:if
+											test="${product.productImage[0] != 'images/default-image.png'}">
+											<img src="${product.productImage[0]}" alt="image"
+												style="width: 12vw; height: 30vh;">
+										</c:if>
 									</div>
 									<div class="col-lg-6">
 										<h2>${product.productName}</h2>
@@ -104,7 +112,7 @@
 
 											<button type="button" class="btn btn-warning"
 												onclick="upload()" style="color: white;">
-												<i class="fa fa-cloud-upload"></i>  Cập nhật
+												<i class="fa fa-cloud-upload"></i> Cập nhật
 											</button>
 
 										</div>
@@ -117,7 +125,7 @@
 										varStatus="status">
 										<div style="width: 30%; margin-left: 2%; margin-bottom: 25%;"
 											id="div-${status.index}">
-											<img src="../${item}" alt="image"
+											<img src="${item}" alt="image"
 												style="width: 12vw; height: 30vh; position: absolute;">
 											<i class="fa fa-times-circle"
 												onclick="hideImage(${status.index})"
@@ -190,7 +198,7 @@
 				var newDiv = '<div style="width:30%;margin-left:2%;margin-bottom:25%;" id="'
 						+ index
 						+ '" name="newImage">'
-						+ '<img src="../'+image+'" alt="image" style="width: 12vw; height: 30vh; position: absolute; loading="lazy"">'
+						+ '<img src="'+image+'" alt="image" style="width: 12vw; height: 30vh; position: absolute; loading="lazy"">'
 						+ '<i class="fa fa-times-circle" onclick="removeFileFromFileList('
 						+ i
 						+ ','
