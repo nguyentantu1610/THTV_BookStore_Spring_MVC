@@ -167,8 +167,8 @@
 	<script>
 		const parentDiv = document.getElementById('allImages');
 		const inputFile = document.getElementById('inputFile');
-		const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/dkjiah88e/upload';
-	    const CLOUDINARY_UPLOAD_PRESET = 'tantu123';
+		const CLOUDINARY_URL = 'your_url';
+	    const CLOUDINARY_UPLOAD_PRESET = 'your_reset';
 	    const image = document.querySelector('#inputFile');
 	    
 	    function myClick () {
